@@ -3,9 +3,13 @@ import { createRoot } from "react-dom/client";
 import "modern-normalize";
 import "./index.css";
 import App from "./components/App/App";
+import { store } from "./redux/store";
+import { Provider } from "react-redux";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </StrictMode>
 );
