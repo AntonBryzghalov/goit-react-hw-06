@@ -1,7 +1,7 @@
 import { useId } from "react";
 import css from "./SearchBox.module.css";
 import { useDispatch } from "react-redux";
-import { filterByName } from "../../redux/store";
+import { filterByName } from "../../redux/filtersSlice";
 
 const maxLength = 60;
 

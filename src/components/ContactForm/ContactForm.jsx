@@ -4,7 +4,7 @@ import * as yup from "yup";
 import { useId } from "react";
 import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/store";
+import { addContact } from "../../redux/contactsSlice";
 
 const SHORT_ERROR_MESSAGE = "Too short!";
 const LONG_ERROR_MESSAGE = "Too long!";
