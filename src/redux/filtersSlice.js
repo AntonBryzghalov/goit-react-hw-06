@@ -6,13 +6,12 @@ const slice = createSlice({
     name: "",
   },
   reducers: {
-    changeNameFilter: (state, action) => {
+    changeFilter: (state, action) => {
       state.name = action.payload;
-      return state;
     },
   },
 });
 
-export const { changeNameFilter } = slice.actions;
+export const { changeFilter } = slice.actions;
 
 export default slice.reducer;
