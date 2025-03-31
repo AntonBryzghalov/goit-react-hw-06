@@ -1,7 +1,7 @@
 import { useId } from "react";
 import css from "./SearchBox.module.css";
 import { useDispatch } from "react-redux";
-import { filterByName } from "../../redux/filtersSlice";
+import { changeNameFilter } from "../../redux/filtersSlice";
 
 const maxLength = 60;
 
@@ -17,7 +17,9 @@ function SearchBox({ value }) {
       <input
         id={id}
         value={value}
-        onChange={(event) => dispatch(filterByName(event.target.value.trim()))}
+        onChange={(event) =>
+          dispatch(changeNameFilter(event.target.value.trim()))
+        }
         size={maxLength}
         maxLength={maxLength}
       />

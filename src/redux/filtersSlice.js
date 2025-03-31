@@ -1,24 +1,18 @@
-import { createAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
-const changeNameFilterActionType = "filters/changeName";
-
-export const filterByName = createAction(changeNameFilterActionType);
-
-const initialState = {
-  name: "",
-};
-
-export const filtersReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case changeNameFilterActionType:
-      if (state.name === action.payload) return state;
-
-      return {
-        ...state,
-        name: action.payload,
-      };
-
-    default:
+const slice = createSlice({
+  name: "filters",
+  initialState: {
+    name: "",
+  },
+  reducers: {
+    changeNameFilter: (state, action) => {
+      state.name = action.payload;
       return state;
-  }
-};
+    },
+  },
+});
+
+export const { changeNameFilter } = slice.actions;
+
+export default slice.reducer;
